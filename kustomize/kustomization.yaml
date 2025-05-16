@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+helmCharts:
+- name: vault
+  includeCRDs: true
+  releaseName: vault
+  namespace: vault
+  version: 0.30.0
+  repo: https://helm.releases.hashicorp.com
+  valuesInline:
+    server:
+      ha:
+        enabled: false
+      readinessProbe:
+        enabled: true
+        path: '/v1/sys/health?standbyok=true&sealedcode=204&uninitcode=204'
+      standalone:
+        enabled: true
