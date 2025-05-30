@@ -17,14 +17,14 @@ helmCharts:
         path: '/v1/sys/health?standbyok=true&sealedcode=204&uninitcode=204'
       standalone:
         enabled: true
-#- name: gha-runner-scale-set
-#  includeCRDs: true
-#  releaseName: arc-vault
-#  namespace: vault
-#  version: 0.11.0
-#  repo: oci://ghcr.io/actions/actions-runner-controller-charts
-#  # Use values file because the current version of this chart has trouble with the githubConfigSecret value being set as a string here.
-#  valuesfile: arc-values.yaml
+- name: gha-runner-scale-set
+  includeCRDs: true
+  releaseName: arc-vault
+  namespace: vault
+  version: 0.11.0
+  repo: oci://ghcr.io/actions/actions-runner-controller-charts
+  # Use values file because the current version of this chart has trouble with the githubConfigSecret value being set as a string here.
+  valuesfile: arc-values.yaml
 
 resources:
 - sa.yaml
