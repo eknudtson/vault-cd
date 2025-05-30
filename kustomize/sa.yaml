@@ -13,5 +13,5 @@ roleRef:
   name: system:auth-delegator
 subjects:
 - kind: ServiceAccount
-  name: vault
-  namespace: arc
+  name: arc
+  namespace: vault
