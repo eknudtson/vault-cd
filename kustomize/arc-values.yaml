@@ -1,0 +1,5 @@
+githubConfigSecret: arc-secret
+githubConfigUrl: https://github.com/eknudtson/vault
+controllerServiceAccount:
+  name: gha-runner-scale-set-controller-gha-rs-controller
+  namespace: actions-runner-controller
